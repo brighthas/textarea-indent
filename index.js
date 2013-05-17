@@ -21,10 +21,9 @@ function indent(ta){
 			}
 			var x1 = txt.substring(sn,txt.length);
     
-			//tx2[0].value = x1;
+
 			var rxx = /^\s*/gi
 			c = x1.match(rxx)[0];
-			//alert(c.length)
 			s = txt.substring(0,point);
 			e = txt.substring(point,txt.length);
 			
