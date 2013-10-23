@@ -1,17 +1,14 @@
-var jquery = require("jquery");
 module.exports = indent;
 
-function indent(ta){
+function indent(tx){
 
-    var tx = jquery(ta);
-
-	tx.keydown(function(event){
+	tx.addEventListener("keydown",function(event){
 
 		if(event.keyCode === 13){
 		
 			event.preventDefault();
-			var txt = tx[0].value;
-			var point = tx[0].selectionEnd;
+			var txt = tx.value;
+			var point = tx.selectionEnd;
 			
 			var s = "",e = "",c = "",hh=false;
 			
@@ -32,12 +29,12 @@ function indent(ta){
 			}else
 			txt = s  +c + e;
 			
-			tx[0].value = txt;
+			tx.value = txt;
 			if(hh){
-			tx[0].setSelectionRange(point+c.length+1,point+c.length+1)
+			tx.setSelectionRange(point+c.length+1,point+c.length+1)
 			}else
-			tx[0].setSelectionRange(point+c.length,point+c.length)
+			tx.setSelectionRange(point+c.length,point+c.length)
 			
 		}		
-	})
+	});
  }
