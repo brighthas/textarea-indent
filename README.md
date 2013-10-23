@@ -3,7 +3,7 @@
 
   html textarea indentation
 
-![demo](https://raw.github.com/brighthas/textarea-indent/main/out.gif)
+![demo](https://raw.github.com/brighthas/textarea-indent/master/out.gif)
 
 
 ## Installation
