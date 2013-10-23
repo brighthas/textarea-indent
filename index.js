@@ -4,9 +4,20 @@ function indent(tx){
 
 	tx.addEventListener("keydown",function(event){
 
+
 		if(event.keyCode === 13){
-		
 			event.preventDefault();
+			insert("\r\n");
+		}
+
+		if(event.keyCode === 9){
+			event.preventDefault();
+			insert("    ");
+		}
+		
+	});
+
+  function insert(v){
 			var txt = tx.value;
 			var point = tx.selectionEnd;
 			
@@ -25,16 +36,16 @@ function indent(tx){
 			e = txt.substring(point,txt.length);
 			
 			if(hh){
-				txt = s  +'\n'+c + e;
+				txt = s  + c + v + e;
 			}else
-			txt = s  +c + e;
+				txt = s  +c+ e;
 			
 			tx.value = txt;
 			if(hh){
-			tx.setSelectionRange(point+c.length+1,point+c.length+1)
-			}else
-			tx.setSelectionRange(point+c.length,point+c.length)
-			
-		}		
-	});
- }
+				tx.setSelectionRange(point+c.length+1,point+c.length+1)
+			}else{
+				tx.setSelectionRange(point+c.length,point+c.length)
+			}
+	  		
+  }
+}

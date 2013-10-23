@@ -3,6 +3,9 @@
 
   html textarea indentation
 
+![demo](https://raw.github.com/brighthas/textarea-indent/out.gif)
+
+
 ## Installation
 
     $ component install brighthas/textarea-indent
